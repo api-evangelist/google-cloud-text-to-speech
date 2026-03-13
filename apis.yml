@@ -1,0 +1,46 @@
+name: Google Cloud Text-to-Speech
+description: >-
+  Google Cloud Text-to-Speech converts text or Speech Synthesis Markup Language
+  (SSML) input into audio data of natural human speech. It provides access to
+  hundreds of voices across multiple languages and variants, powered by
+  DeepMind's WaveNet technology and Google's neural network models.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - Text-to-Speech
+  - Speech Synthesis
+  - Audio
+  - Google Cloud
+  - Machine Learning
+apis:
+  - name: Google Cloud Text-to-Speech API
+    description: >-
+      Synthesizes natural-sounding speech from text or SSML input, supporting
+      multiple languages, voices, and audio formats powered by Google's AI
+      models.
+    humanURL: https://cloud.google.com/text-to-speech
+    baseURL: https://texttospeech.googleapis.com
+    tags:
+      - Text-to-Speech
+      - Speech Synthesis
+      - Audio
+    properties:
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: JSONSchema
+        url: json-schema/speech-synthesis.json
+      - type: JSONLD
+        url: json-ld/context.jsonld
+common:
+  - type: GettingStarted
+    url: https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries
+  - type: Pricing
+    url: https://cloud.google.com/text-to-speech/pricing
+  - type: JSONLD
+    url: json-ld/context.jsonld
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

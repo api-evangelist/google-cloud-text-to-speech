@@ -1,0 +1,123 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Text-to-Speech API
+  description: >-
+    Synthesizes natural-sounding speech from text or SSML input using Google's
+    AI-powered voice synthesis technology.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/text-to-speech
+servers:
+  - url: https://texttospeech.googleapis.com/v1
+paths:
+  /voices:
+    get:
+      operationId: listVoices
+      summary: List available voices
+      description: Returns a list of voices that can be used for synthesis.
+      parameters:
+        - name: languageCode
+          in: query
+          description: BCP-47 language tag to filter voices.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response containing available voices.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  voices:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Voice'
+  /text:synthesize:
+    post:
+      operationId: synthesizeSpeech
+      summary: Synthesize speech
+      description: Synthesizes speech from text or SSML input.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SynthesizeSpeechRequest'
+      responses:
+        '200':
+          description: Successful response containing synthesized audio.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SynthesizeSpeechResponse'
+components:
+  schemas:
+    Voice:
+      type: object
+      properties:
+        languageCodes:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        ssmlGender:
+          type: string
+          enum:
+            - SSML_VOICE_GENDER_UNSPECIFIED
+            - MALE
+            - FEMALE
+            - NEUTRAL
+        naturalSampleRateHertz:
+          type: integer
+    SynthesizeSpeechRequest:
+      type: object
+      required:
+        - input
+        - voice
+        - audioConfig
+      properties:
+        input:
+          type: object
+          properties:
+            text:
+              type: string
+            ssml:
+              type: string
+        voice:
+          type: object
+          properties:
+            languageCode:
+              type: string
+            name:
+              type: string
+            ssmlGender:
+              type: string
+        audioConfig:
+          type: object
+          properties:
+            audioEncoding:
+              type: string
+              enum:
+                - AUDIO_ENCODING_UNSPECIFIED
+                - LINEAR16
+                - MP3
+                - OGG_OPUS
+                - MULAW
+                - ALAW
+            speakingRate:
+              type: number
+            pitch:
+              type: number
+            volumeGainDb:
+              type: number
+            sampleRateHertz:
+              type: integer
+    SynthesizeSpeechResponse:
+      type: object
+      properties:
+        audioContent:
+          type: string
+          description: Base64-encoded audio content.

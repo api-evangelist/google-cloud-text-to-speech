@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcp": "https://cloud.google.com/text-to-speech#",
+    "SpeechSynthesis": "gcp:SpeechSynthesis",
+    "voice": "gcp:voice",
+    "languageCode": "gcp:languageCode",
+    "ssmlGender": "gcp:ssmlGender",
+    "audioEncoding": "gcp:audioEncoding",
+    "speakingRate": "gcp:speakingRate",
+    "pitch": "gcp:pitch",
+    "volumeGainDb": "gcp:volumeGainDb",
+    "sampleRateHertz": "gcp:sampleRateHertz",
+    "audioContent": "gcp:audioContent",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/json-schema/speech-synthesis.json",
+  "title": "Speech Synthesis Request",
+  "description": "Schema for a Google Cloud Text-to-Speech synthesis request.",
+  "type": "object",
+  "required": ["input", "voice", "audioConfig"],
+  "properties": {
+    "input": {
+      "type": "object",
+      "description": "The input to be synthesized.",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Raw text to be synthesized."
+        },
+        "ssml": {
+          "type": "string",
+          "description": "SSML markup to be synthesized."
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "description": "The desired voice configuration.",
+      "required": ["languageCode"],
+      "properties": {
+        "languageCode": {
+          "type": "string",
+          "description": "BCP-47 language tag."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the voice."
+        },
+        "ssmlGender": {
+          "type": "string",
+          "enum": ["SSML_VOICE_GENDER_UNSPECIFIED", "MALE", "FEMALE", "NEUTRAL"],
+          "description": "Preferred gender of the voice."
+        }
+      }
+    },
+    "audioConfig": {
+      "type": "object",
+      "description": "Audio configuration for the synthesized output.",
+      "required": ["audioEncoding"],
+      "properties": {
+        "audioEncoding": {
+          "type": "string",
+          "enum": ["AUDIO_ENCODING_UNSPECIFIED", "LINEAR16", "MP3", "OGG_OPUS", "MULAW", "ALAW"],
+          "description": "The encoding format of the output audio."
+        },
+        "speakingRate": {
+          "type": "number",
+          "description": "Speaking rate, range [0.25, 4.0]."
+        },
+        "pitch": {
+          "type": "number",
+          "description": "Pitch adjustment, range [-20.0, 20.0]."
+        },
+        "volumeGainDb": {
+          "type": "number",
+          "description": "Volume gain in dB, range [-96.0, 16.0]."
+        },
+        "sampleRateHertz": {
+          "type": "integer",
+          "description": "Sample rate in Hz for the output audio."
+        }
+      }
+    }
+  }
+}
