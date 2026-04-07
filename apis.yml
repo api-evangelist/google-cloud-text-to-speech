@@ -1,5 +1,5 @@
 aid: google-cloud-text-to-speech
-name: Google Cloud Text-to-Speech
+name: Google Cloud Text-To-Speech
 description: >-
   Google Cloud Text-to-Speech converts text or Speech Synthesis Markup Language
   (SSML) input into audio data of natural human speech. It provides access to

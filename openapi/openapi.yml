@@ -14,7 +14,7 @@ paths:
   /voices:
     get:
       operationId: listVoices
-      summary: List available voices
+      summary: Google Cloud Text-To-Speech List available voices
       description: Returns a list of voices that can be used for synthesis.
       parameters:
         - name: languageCode
@@ -37,7 +37,7 @@ paths:
   /text:synthesize:
     post:
       operationId: synthesizeSpeech
-      summary: Synthesize speech
+      summary: Google Cloud Text-To-Speech Synthesize speech
       description: Synthesizes speech from text or SSML input.
       requestBody:
         required: true
