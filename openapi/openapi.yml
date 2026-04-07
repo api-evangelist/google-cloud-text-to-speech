@@ -34,6 +34,8 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Voice'
+      tags:
+        - Voices
   /text:synthesize:
     post:
       operationId: synthesizeSpeech
@@ -52,6 +54,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SynthesizeSpeechResponse'
+      tags:
+        - Text:synthesize
 components:
   schemas:
     Voice:
@@ -121,3 +125,6 @@ components:
         audioContent:
           type: string
           description: Base64-encoded audio content.
+tags:
+  - name: Text:synthesize
+  - name: Voices
