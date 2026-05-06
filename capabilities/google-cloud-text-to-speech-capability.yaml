@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Text-to-Speech API
+  description: Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.
+  tags:
+  - Google
+  - Cloud
+  - Text
+  - To
+  - Speech
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-text-to-speech
+    baseUri: https://texttospeech.googleapis.com/v1
+    description: Google Cloud Text-to-Speech API HTTP API.
+    resources:
+    - name: voices
+      path: /voices
+      operations:
+      - name: listvoices
+        method: GET
+        description: Google Cloud Text-To-Speech List available voices
+        inputParameters:
+        - name: languageCode
+          in: query
+          type: string
+          description: BCP-47 language tag to filter voices.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: text-synthesize
+      path: /text:synthesize
+      operations:
+      - name: synthesizespeech
+        method: POST
+        description: Google Cloud Text-To-Speech Synthesize speech
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-text-to-speech-rest
+    description: REST adapter for Google Cloud Text-to-Speech API.
+    resources:
+    - path: /voices
+      name: listvoices
+      operations:
+      - method: GET
+        name: listvoices
+        description: Google Cloud Text-To-Speech List available voices
+        call: google-cloud-text-to-speech.listvoices
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /text:synthesize
+      name: synthesizespeech
+      operations:
+      - method: POST
+        name: synthesizespeech
+        description: Google Cloud Text-To-Speech Synthesize speech
+        call: google-cloud-text-to-speech.synthesizespeech
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-text-to-speech-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Text-to-Speech API for AI agent use.
+    tools:
+    - name: listvoices
+      description: Google Cloud Text-To-Speech List available voices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-text-to-speech.listvoices
+      with:
+        languageCode: tools.languageCode
+      inputParameters:
+      - name: languageCode
+        type: string
+        description: BCP-47 language tag to filter voices.
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: synthesizespeech
+      description: Google Cloud Text-To-Speech Synthesize speech
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-text-to-speech.synthesizespeech
+      outputParameters:
+      - type: object
+        mapping: $.
