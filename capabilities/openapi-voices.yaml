@@ -1,0 +1,76 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Text-to-Speech API — Voices
+  description: 'Google Cloud Text-to-Speech API — Voices. 1 operations. Lead operation: Google Cloud Text-To-Speech List available
+    voices. Self-contained Naftiko capability covering one Google Cloud Text To Speech business surface.'
+  tags:
+  - Google Cloud Text To Speech
+  - Voices
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_TEXT_TO_SPEECH_API_KEY: GOOGLE_CLOUD_TEXT_TO_SPEECH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-voices
+    baseUri: https://texttospeech.googleapis.com/v1
+    description: Google Cloud Text-to-Speech API — Voices business capability. Self-contained, no shared references.
+    resources:
+    - name: voices
+      path: /voices
+      operations:
+      - name: listvoices
+        method: GET
+        description: Google Cloud Text-To-Speech List available voices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: languageCode
+          in: query
+          type: string
+          description: BCP-47 language tag to filter voices.
+  exposes:
+  - type: rest
+    namespace: openapi-voices-rest
+    port: 8080
+    description: REST adapter for Google Cloud Text-to-Speech API — Voices. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/voices
+      name: voices
+      description: REST surface for voices.
+      operations:
+      - method: GET
+        name: listvoices
+        description: Google Cloud Text-To-Speech List available voices
+        call: openapi-voices.listvoices
+        with:
+          languageCode: rest.languageCode
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-voices-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Text-to-Speech API — Voices. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-text-speech-list
+      description: Google Cloud Text-To-Speech List available voices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-voices.listvoices
+      with:
+        languageCode: tools.languageCode
+      outputParameters:
+      - type: object
+        mapping: $.
