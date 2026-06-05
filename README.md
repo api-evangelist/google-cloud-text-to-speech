@@ -1,23 +1,25 @@
-# Google Cloud Text-to-Speech (google-cloud-text-to-speech)
+# Google Cloud Text-To-Speech (google-cloud-text-to-speech)
 
 Google Cloud Text-to-Speech converts text or Speech Synthesis Markup Language (SSML) input into audio data of natural human speech. It provides access to hundreds of voices across multiple languages and variants, powered by DeepMind's WaveNet technology and Google's neural network models.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/apis.yml)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/apis.yml)
 
-**Scope:** Contract, Consuming, 3rd-Party
+## Scope
 
-**Tags:**
+- **Type:** Index
 
-- Text-to-Speech
-- Speech Synthesis
+## Tags
+
 - Audio
 - Google Cloud
 - Machine Learning
+- Speech Synthesis
+- Text-To-Speech
 
-**Timestamps:**
+## Timestamps
 
-- Created: 2026-03-13
-- Modified: 2026-04-28
+- **Created:** 2026-03-13
+- **Modified:** 2026-05-19
 
 ## APIs
 
@@ -25,27 +27,42 @@ Google Cloud Text-to-Speech converts text or Speech Synthesis Markup Language (S
 
 Synthesizes natural-sounding speech from text or SSML input, supporting multiple languages, voices, and audio formats powered by Google's AI models.
 
-**Human URL:** [https://cloud.google.com/text-to-speech](https://cloud.google.com/text-to-speech)
+- **Human URL:** [https://cloud.google.com/text-to-speech](https://cloud.google.com/text-to-speech)
+- **Base URL:** `https://texttospeech.googleapis.com`
 
-**Tags:**
+#### Tags
 
-- Text-to-Speech
-- Speech Synthesis
 - Audio
+- Speech Synthesis
+- Text-To-Speech
 
-**Properties:**
+#### Properties
 
-- [OpenAPI](openapi/openapi.yml)
-- [JSONSchema](json-schema/speech-synthesis.json)
-- [JSONLD](json-ld/context.jsonld)
+- [Documentation](https://cloud.google.com/text-to-speech/docs/reference/rest)
+- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting Started](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
+- [JSON Schema](json-schema/speech-synthesis.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
 
 ## Common Properties
 
-- [GettingStarted](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
+- [GitHub Organization](https://github.com/GoogleCloudPlatform)
+- [Portal](https://cloud.google.com/text-to-speech)
+- [Getting Started](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
+- [Documentation](https://cloud.google.com/text-to-speech/docs)
+- [Authentication](https://cloud.google.com/docs/authentication)
 - [Pricing](https://cloud.google.com/text-to-speech/pricing)
-- [JSONLD](json-ld/context.jsonld)
+- [Terms of Service](https://cloud.google.com/terms)
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Status Page](https://status.cloud.google.com/)
+- [Support](https://cloud.google.com/text-to-speech/docs/support)
+- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Integrations](https://cloud.google.com/marketplace)
 
 ## Maintainers
 
-**FN:** API Evangelist
-**Email:** info@apievangelist.com
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
