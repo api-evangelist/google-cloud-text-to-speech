@@ -41,6 +41,10 @@ apis:
       - type: JSONLD
         url: json-ld/context.jsonld
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-text-to-speech-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-text-to-speech-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
@@ -65,6 +69,8 @@ common:
     url: json-ld/context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
+  - url: https://cloud.google.com/feeds/tts-release-notes.xml
+    type: Blog
 integrations:
   - name: Become a Partner
 maintainers:
