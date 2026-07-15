@@ -41,6 +41,8 @@ apis:
       - type: JSONLD
         url: json-ld/context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-text-to-speech-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-text-to-speech-vulnerability-disclosure.yml
   - type: DomainSecurity
