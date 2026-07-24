@@ -1,0 +1,58 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Text-to-Speech Text:synthesize Voices API
+  description: Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/text-to-speech
+servers:
+- url: https://texttospeech.googleapis.com/v1
+tags:
+- name: Voices
+paths:
+  /voices:
+    get:
+      operationId: listVoices
+      summary: Google Cloud Text-To-Speech List available voices
+      description: Returns a list of voices that can be used for synthesis.
+      parameters:
+      - name: languageCode
+        in: query
+        description: BCP-47 language tag to filter voices.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response containing available voices.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  voices:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Voice'
+      tags:
+      - Voices
+components:
+  schemas:
+    Voice:
+      type: object
+      properties:
+        languageCodes:
+          type: array
+          items:
+            type: string
+        name:
+          type: string
+        ssmlGender:
+          type: string
+          enum:
+          - SSML_VOICE_GENDER_UNSPECIFIED
+          - MALE
+          - FEMALE
+          - NEUTRAL
+        naturalSampleRateHertz:
+          type: integer

@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Text-to-Speech Text:synthesize API
+  description: Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/text-to-speech
+servers:
+- url: https://texttospeech.googleapis.com/v1
+tags:
+- name: Text:synthesize
+paths:
+  /text:synthesize:
+    post:
+      operationId: synthesizeSpeech
+      summary: Google Cloud Text-To-Speech Synthesize speech
+      description: Synthesizes speech from text or SSML input.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SynthesizeSpeechRequest'
+      responses:
+        '200':
+          description: Successful response containing synthesized audio.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SynthesizeSpeechResponse'
+      tags:
+      - Text:synthesize
+components:
+  schemas:
+    SynthesizeSpeechResponse:
+      type: object
+      properties:
+        audioContent:
+          type: string
+          description: Base64-encoded audio content.
+    SynthesizeSpeechRequest:
+      type: object
+      required:
+      - input
+      - voice
+      - audioConfig
+      properties:
+        input:
+          type: object
+          properties:
+            text:
+              type: string
+            ssml:
+              type: string
+        voice:
+          type: object
+          properties:
+            languageCode:
+              type: string
+            name:
+              type: string
+            ssmlGender:
+              type: string
+        audioConfig:
+          type: object
+          properties:
+            audioEncoding:
+              type: string
+              enum:
+              - AUDIO_ENCODING_UNSPECIFIED
+              - LINEAR16
+              - MP3
+              - OGG_OPUS
+              - MULAW
+              - ALAW
+            speakingRate:
+              type: number
+            pitch:
+              type: number
+            volumeGainDb:
+              type: number
+            sampleRateHertz:
+              type: integer
