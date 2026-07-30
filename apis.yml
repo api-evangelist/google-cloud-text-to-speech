@@ -4,7 +4,19 @@ description: >-
   Google Cloud Text-to-Speech converts text or Speech Synthesis Markup Language (SSML) input into audio data of natural
   human speech. It provides access to hundreds of voices across multiple languages and variants, powered by DeepMind's
   WaveNet technology and Google's neural network models.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-text-to-speech.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-text-to-speech/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -17,30 +29,50 @@ tags:
   - Speech Synthesis
   - Text-To-Speech
 apis:
-  - name: Google Cloud Text-to-Speech API
-    description: >-
-      Synthesizes natural-sounding speech from text or SSML input, supporting multiple languages, voices, and audio
-      formats powered by Google's AI models.
-    humanURL: https://cloud.google.com/text-to-speech
-    baseURL: https://texttospeech.googleapis.com
-    tags:
-      - Audio
-      - Speech Synthesis
-      - Text-To-Speech
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/text-to-speech/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries
-      - type: JSONSchema
-        url: json-schema/speech-synthesis.json
-      - type: JSONLD
-        url: json-ld/context.jsonld
+- aid: google-cloud-text-to-speech:google-cloud-text-to-speech-text-synthesize-api
+  name: Google Cloud Text-To-Speech Text:synthesize API
+  description: >-
+    The Text:synthesize API from Google Cloud Text-To-Speech — 1 operation(s) for text:synthesize.
+  humanURL: https://cloud.google.com/text-to-speech
+  baseURL: https://texttospeech.googleapis.com
+  tags:
+  - Text:synthesize
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-text-to-speech-text-synthesize-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/text-to-speech/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries
+  - type: JSONSchema
+    url: json-schema/speech-synthesis.json
+  - type: JSONLD
+    url: json-ld/context.jsonld
+- aid: google-cloud-text-to-speech:google-cloud-text-to-speech-voices-api
+  name: Google Cloud Text-To-Speech Voices API
+  description: The Voices API from Google Cloud Text-To-Speech — 1 operation(s) for voices.
+  humanURL: https://cloud.google.com/text-to-speech
+  baseURL: https://texttospeech.googleapis.com
+  tags:
+  - Voices
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-text-to-speech-voices-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/text-to-speech/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries
+  - type: JSONSchema
+    url: json-schema/speech-synthesis.json
+  - type: JSONLD
+    url: json-ld/context.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-text-to-speech/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-text-to-speech-agentic-access.yml
   - type: VulnerabilityDisclosure
