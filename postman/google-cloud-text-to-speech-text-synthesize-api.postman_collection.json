@@ -1,0 +1,125 @@
+{
+  "info": {
+    "_postman_id": "2ef53813-ce2c-414a-9529-5621a80088fe",
+    "name": "Google Cloud Text-to-Speech Text:synthesize API",
+    "description": "Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:49.000Z",
+    "updatedAt": "2026-07-28T01:48:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2ef53813-ce2c-414a-9529-5621a80088fe"
+  },
+  "item": [
+    {
+      "name": "text:synthesize",
+      "item": [
+        {
+          "name": "Google Cloud Text-To-Speech Synthesize speech",
+          "id": "be56c530-fc7f-4600-96bf-cda97f21d6b3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"input\": {\n    \"text\": \"<string>\",\n    \"ssml\": \"<string>\"\n  },\n  \"voice\": {\n    \"languageCode\": \"<string>\",\n    \"name\": \"<string>\",\n    \"ssmlGender\": \"<string>\"\n  },\n  \"audioConfig\": {\n    \"audioEncoding\": \"ALAW\",\n    \"speakingRate\": \"<number>\",\n    \"pitch\": \"<number>\",\n    \"volumeGainDb\": \"<number>\",\n    \"sampleRateHertz\": \"<integer>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/text:synthesize",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "text:synthesize"
+              ]
+            },
+            "description": "Synthesizes speech from text or SSML input."
+          },
+          "response": [
+            {
+              "id": "6b842f20-80d0-4c64-83f3-410bda3b87e4",
+              "name": "Successful response containing synthesized audio.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"input\": {\n    \"text\": \"<string>\",\n    \"ssml\": \"<string>\"\n  },\n  \"voice\": {\n    \"languageCode\": \"<string>\",\n    \"name\": \"<string>\",\n    \"ssmlGender\": \"<string>\"\n  },\n  \"audioConfig\": {\n    \"audioEncoding\": \"ALAW\",\n    \"speakingRate\": \"<number>\",\n    \"pitch\": \"<number>\",\n    \"volumeGainDb\": \"<number>\",\n    \"sampleRateHertz\": \"<integer>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/text:synthesize",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "text:synthesize"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"audioContent\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:48:49.000Z",
+              "updatedAt": "2026-07-28T01:48:49.000Z",
+              "uid": "35240-6b842f20-80d0-4c64-83f3-410bda3b87e4"
+            }
+          ],
+          "createdAt": "2026-07-28T01:48:49.000Z",
+          "updatedAt": "2026-07-28T01:48:49.000Z",
+          "uid": "35240-be56c530-fc7f-4600-96bf-cda97f21d6b3"
+        }
+      ],
+      "id": "b158a049-65ee-4d6f-827b-fa23724cd45f",
+      "createdAt": "2026-07-28T01:48:49.000Z",
+      "updatedAt": "2026-07-28T01:48:49.000Z",
+      "uid": "35240-b158a049-65ee-4d6f-827b-fa23724cd45f"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://texttospeech.googleapis.com/v1"
+    }
+  ]
+}

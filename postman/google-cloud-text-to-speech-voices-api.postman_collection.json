@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "99b880aa-9eae-4a5e-8310-47d97523369d",
+    "name": "Google Cloud Text-to-Speech Text:synthesize Voices API",
+    "description": "Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:53.000Z",
+    "updatedAt": "2026-07-28T01:48:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-99b880aa-9eae-4a5e-8310-47d97523369d"
+  },
+  "item": [
+    {
+      "name": "voices",
+      "item": [
+        {
+          "name": "Google Cloud Text-To-Speech List available voices",
+          "id": "41cc5f4f-aae7-4459-9464-563ebc318449",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/voices?languageCode=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "voices"
+              ],
+              "query": [
+                {
+                  "description": "BCP-47 language tag to filter voices.",
+                  "key": "languageCode",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns a list of voices that can be used for synthesis."
+          },
+          "response": [
+            {
+              "id": "e1e451c7-c74a-46f3-acea-964659275aff",
+              "name": "Successful response containing available voices.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/voices?languageCode=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "voices"
+                  ],
+                  "query": [
+                    {
+                      "description": "BCP-47 language tag to filter voices.",
+                      "key": "languageCode",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"voices\": [\n    {\n      \"languageCodes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"name\": \"<string>\",\n      \"ssmlGender\": \"SSML_VOICE_GENDER_UNSPECIFIED\",\n      \"naturalSampleRateHertz\": \"<integer>\"\n    },\n    {\n      \"languageCodes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"name\": \"<string>\",\n      \"ssmlGender\": \"MALE\",\n      \"naturalSampleRateHertz\": \"<integer>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T01:48:53.000Z",
+              "updatedAt": "2026-07-28T01:48:53.000Z",
+              "uid": "35240-e1e451c7-c74a-46f3-acea-964659275aff"
+            }
+          ],
+          "createdAt": "2026-07-28T01:48:53.000Z",
+          "updatedAt": "2026-07-28T01:48:53.000Z",
+          "uid": "35240-41cc5f4f-aae7-4459-9464-563ebc318449"
+        }
+      ],
+      "id": "ba2be3a9-74a3-4e78-a2bf-39a03b97ec5e",
+      "createdAt": "2026-07-28T01:48:53.000Z",
+      "updatedAt": "2026-07-28T01:48:53.000Z",
+      "uid": "35240-ba2be3a9-74a3-4e78-a2bf-39a03b97ec5e"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://texttospeech.googleapis.com/v1"
+    }
+  ]
+}
