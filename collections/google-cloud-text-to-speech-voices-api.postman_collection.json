@@ -1,0 +1,114 @@
+{
+  "item": [
+    {
+      "id": "74db2f60-9502-474b-ac1c-add0dd2f9e97",
+      "name": "Voices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2923f90f-faec-4111-a2c2-f322e8ff0557",
+          "name": "Google Cloud Text-To-Speech List available voices",
+          "request": {
+            "name": "Google Cloud Text-To-Speech List available voices",
+            "description": {
+              "content": "Returns a list of voices that can be used for synthesis.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "voices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "languageCode",
+                  "value": "<string>",
+                  "description": "BCP-47 language tag to filter voices."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94f174f0-ad42-4aaa-b0c9-eb200d21d3a2",
+              "name": "Successful response containing available voices.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "voices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "languageCode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"voices\": [\n    {\n      \"languageCodes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"name\": \"string\",\n      \"ssmlGender\": \"SSML_VOICE_GENDER_UNSPECIFIED\",\n      \"naturalSampleRateHertz\": 5311\n    },\n    {\n      \"languageCodes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"name\": \"string\",\n      \"ssmlGender\": \"SSML_VOICE_GENDER_UNSPECIFIED\",\n      \"naturalSampleRateHertz\": 7757\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://texttospeech.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "933e29d6-8ca4-4d67-861e-28b5ac68bad2",
+    "name": "Google Cloud Text-to-Speech Text:synthesize Voices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
