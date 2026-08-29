@@ -4,6 +4,18 @@ description: >-
   Google Cloud Text-to-Speech converts text or Speech Synthesis Markup Language (SSML) input into audio data of natural
   human speech. It provides access to hundreds of voices across multiple languages and variants, powered by DeepMind's
   WaveNet technology and Google's neural network models.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
