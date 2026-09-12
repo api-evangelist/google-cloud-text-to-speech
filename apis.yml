@@ -89,6 +89,8 @@ apis:
   - type: JSONLD
     url: json-ld/context.jsonld
 common:
+  - type: Website
+    url: https://www.google.com/
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-cloud-text-to-speech/overview
   - type: AgenticAccess
@@ -128,3 +130,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: google-cloud-platform
+x-relationship: product
