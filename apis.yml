@@ -74,6 +74,8 @@ apis:
   humanURL: https://cloud.google.com/text-to-speech
   baseURL: https://texttospeech.googleapis.com
   tags:
+  - Voice
+  tags_raw:
   - Voices
   properties:
   - type: OpenAPI
