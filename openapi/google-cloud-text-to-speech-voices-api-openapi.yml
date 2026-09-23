@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Text-to-Speech Text:synthesize Voices API
+  title: Google Cloud Text-to-Speech Voices API
   description: Synthesizes natural-sounding speech from text or SSML input using Google's AI-powered voice synthesis technology.
   version: v1
   contact:
