@@ -37,7 +37,7 @@ type: Index
 tags:
   - Audio
   - Google Cloud
-  - Machine-Learning
+  - Machine Learning
   - Speech Synthesis
   - Text-to-Speech
 tags_raw:
@@ -46,6 +46,7 @@ tags_raw:
   - Machine Learning
   - Speech Synthesis
   - Text-To-Speech
+  - Machine-Learning
 apis:
 - aid: google-cloud-text-to-speech:google-cloud-text-to-speech-text-synthesize-api
   name: Google Cloud Text-To-Speech Text:synthesize API
