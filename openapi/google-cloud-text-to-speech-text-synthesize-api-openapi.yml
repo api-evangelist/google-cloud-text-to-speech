@@ -33,6 +33,12 @@ paths:
       - Text:synthesize
 components:
   schemas:
+    SynthesizeSpeechResponse:
+      type: object
+      properties:
+        audioContent:
+          type: string
+          description: Base64-encoded audio content.
     SynthesizeSpeechRequest:
       type: object
       required:
@@ -76,9 +82,3 @@ components:
               type: number
             sampleRateHertz:
               type: integer
-    SynthesizeSpeechResponse:
-      type: object
-      properties:
-        audioContent:
-          type: string
-          description: Base64-encoded audio content.
